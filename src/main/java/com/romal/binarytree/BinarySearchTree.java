@@ -1,6 +1,6 @@
 package com.romal.binarytree;
 
-public class BinaryTree {
+public class BinarySearchTree {
 
    private TreeNode root;
 
@@ -8,6 +8,9 @@ public class BinaryTree {
    }
 
    public TreeNode find(Integer data) {
+
+      if (root != null)
+         return root.find(data);
       return null;
    }
 
