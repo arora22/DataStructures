@@ -14,10 +14,26 @@ public class TreeNode {
       if (this.data == data)
          return this;
       if (data < this.data && leftChild != null)
-         return this.find(data);
+         return leftChild.find(data);
       if (data > this.data && rightChild != null) /// this was shown as if (rightChild != null)
-         return this.find(data);
+         return rightChild.find(data);
       return null;
+   }
+
+   public void insert(Integer data) {
+      if (data >= this.data) {
+         if (this.rightChild == null) {
+            this.rightChild = new TreeNode(data);
+         } else {
+            this.rightChild.insert(data);
+         }
+      } else {
+         if (this.leftChild == null) {
+            this.leftChild = new TreeNode(data);
+         } else {
+            this.leftChild.insert(data);
+         }
+      }
    }
 
    /**
