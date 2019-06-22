@@ -60,6 +60,24 @@ public class BinarySearchTree {
                parent.setLeftChild(null);
             }
          }
+      } else if (current.getRightChild() == null) {
+         if (current == this.root) {
+            this.root = current.getLeftChild();
+         } else if (isLeftChild) {
+            parent.setLeftChild(current.getLeftChild());
+         } else {
+            parent.setRightChild(current.getRightChild());
+         }
+
+      } else if (current.getLeftChild() == null) {
+         if (current == this.root) {
+            this.root = current.getRightChild();
+         } else if (isLeftChild) {
+            parent.setLeftChild(current.getRightChild());
+         } else {
+            parent.setRightChild(current.getLeftChild());
+         }
+
       }
    }
 
